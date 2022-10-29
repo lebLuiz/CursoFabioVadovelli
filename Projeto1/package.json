@@ -1,0 +1,22 @@
+{
+  "name": "Projeto1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "@types/jest": "^29.2.0",
+    "babel-jest": "^29.2.2",
+    "jest": "^29.2.2"
+  }
+}
