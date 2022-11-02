@@ -79,7 +79,7 @@ describe('Cart', () => {
             expect(cart.checkout()).toMatchSnapshot();
         });
 
-        it('should return an object with the total and the list of items when sumary() is called', () => {
+        it('should return an object with the total and the list of items when summary() is called', () => {
             cart.add({
                 product,
                 quantity: 5,
@@ -90,8 +90,22 @@ describe('Cart', () => {
                 quantity: 3,
             });
 
-            expect(cart.sumary()).toMatchSnapshot();
+            expect(cart.summary()).toMatchSnapshot();
             expect(cart.getTotal().getAmount()).toBeGreaterThan(0);
+        });
+        
+        it('should include formatted amount in the summary', () => {
+            cart.add({
+                product,
+                quantity: 5,
+            });
+
+            cart.add({
+                product: product2,
+                quantity: 3,
+            });
+
+            expect(cart.summary().formatted).toEqual('R$3,025.56');
         });
 
         it('should reset the cart when checkout() is called', () => {
@@ -177,6 +191,44 @@ describe('Cart', () => {
             });
 
             expect(cart.getTotal().getAmount()).toEqual(106164);
+        });
+
+        it('should receive two or more conditions and determine/apply the best discount. First case.', () => {
+            const condition1 = {
+                percentage: 30,
+                minimum: 2,
+            };
+
+            const condition2 = {
+                quantity: 2,
+            };
+
+            cart.add({
+                product,
+                condition: [condition1, condition2],
+                quantity: 5,
+            });
+
+            expect(cart.getTotal().getAmount()).toEqual(106164);
+        });
+
+        it('should receive two or more conditions and determine/apply the best discount. Second case.', () => {
+            const condition1 = {
+                percentage: 80,
+                minimum: 2,
+            };
+
+            const condition2 = {
+                quantity: 2,
+            };
+
+            cart.add({
+                product,
+                condition: [condition1, condition2],
+                quantity: 5,
+            });
+
+            expect(cart.getTotal().getAmount()).toEqual(35388);
         });
     });
 });
