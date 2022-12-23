@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Produto 1",
+    "price": "12.33",
+    "image": "https://ilhadomelsurfshop.com.br/wp-content/uploads/2021/12/0514_tenis_vans_authentic_-_preto.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Produto 2",
+    "price": "22.44",
+    "image": "https://secure-static.vans.com.br/medias/sys_master/vans/vans/h7c/hbb/h00/h00/10278738821150/1004500020005U-01-BASEIMAGE-Midres.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Produto 3",
+    "price": "20",
+    "image": "https://static.lojanba.com/produtos/regata-nba-los-angeles-lakers-n6-lebron-james-nike-masculina/66/2IC-4672-166/2IC-4672-166_zoom1.jpg?ts=1632823922&ims=544x"
+  },
+  {
+    "id": 4,
+    "title": "Produto 4",
+    "price": "20",
+    "image": "https://photos.enjoei.com.br/calca-alfaiataria-77447709/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8yOTU4NDAyMS8xMzY4YzM3MDc1NGE2Y2IzYjgwODFjMzNkNTc4MDA1Yi5qcGc"
+  }
+]
